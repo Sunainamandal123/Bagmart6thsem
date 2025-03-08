@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>front</title>
+    <style>
+        *{  
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:sans-serif;
+        }
+        body{
+            background: url("{% static 'frontpage.png' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+            background-position: center;
+        }
+        .navbar{
+            width : 85%;
+            margin : auto;
+            
+            
+        }
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+        .content h1{
+            font-size: 70px;
+            margin-top: 80px;
+        }
+        .content p{
+            margin: 20px auto;
+            font-weight: 110;
+            line-height: 5px;
+            font-size: 170%;
+        }
+        
+        button{
+            width: 200px;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius :25px;
+            font-weight: bold;
+            border: 2px solid #009688;
+            background: transparent;
+            color: #fff;
+            font-size: 130%;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        span{
+            background: #009688;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+            
+        } 
+        button:hover span{
+            width: 100%;
+
+        }
+        button:hover{
+            border: none;
+        }
+        button a{
+          color: #fff;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="banner">
+            <div class="navbar">
+                <img src ="{% static 'LOO.png' %}" class="logo">
+            </div>
+         <div class="content">
+            <h1>BAGMART</h1>
+            <p> Carry Your Dream</p>
+            <div>
+                <button type="button" ><span></span><a href="{% url 'customerlogin' %}">Login</a> </button>
+                <button type="button"><span></span><a href="{% url 'registration' %}">Signup</a></button>
+            </div>
+         </div>
+        </div>
+
+    </body>
+</html>
